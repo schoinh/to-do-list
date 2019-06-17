@@ -31,7 +31,7 @@ $(function(){
         $(this).remove();
       })
     })
-
+    $("form")[0].reset();
 
   })
 
