@@ -24,11 +24,11 @@ $(function(){
     var newTask = new Task ($("input#task").val(), $("input:radio[name=priority]:checked").val());
     toDoList.addTask(newTask);
     if (newTask.priority == "high") {
-      $(".high").append("<li>"+newTask.taskName+"</li>");
+      $(".high").append("<li id='top'>"+newTask.taskName+"</li>");
     } else if (newTask.priority == "medium") {
-      $(".med").append("<li>"+newTask.taskName+"</li>");
+      $(".med").append("<li id='mid'>"+newTask.taskName+"</li>");
     } else {
-      $(".low").append("<li>"+newTask.taskName+"</li>");
+      $(".low").append("<li id='bot'>"+newTask.taskName+"</li>");
     }
 
     $("li").click(function() {
@@ -36,6 +36,15 @@ $(function(){
       $(".strikethrough").click(function() {
         $(this).remove();
       })
+    })
+    $("#highClear").click(function(){
+      $(".strikethrough#top").remove();
+    })
+    $("#medClear").click(function(){
+      $(".strikethrough#mid").remove();
+    })
+    $("#lowClear").click(function(){
+      $(".strikethrough#bot").remove();
     })
     $("form")[0].reset();
 
