@@ -5,21 +5,72 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>To DO List</title>
+    <title>To Do List</title>
   </head>
   <body>
   <div class="container">
+    <h2>To-Do List</h2>
+    <br>
     <form>
       <div class="form-group">
         <label for="task"> Enter a task:</label>
-        <input type="text" id="task">
+        <input type="text" id="task" class="form-control">
       </div>
-
-      <button type="submit" name="button">Add task</button>
+      <div class="form-group">
+        <p>Choose a priority level:</p>
+        <label>
+          <input type="radio" name="priority" value="high">
+          High
+        </label>
+        <label>
+          <input type="radio" name="priority" value="medium">
+          Medium
+        </label>
+        <label>
+          <input type="radio" name="priority" value="low">
+          Low
+        </label>
+      </div>
+      <button type="submit" class="btn btn-secondary">Add task</button>
     </form>
     <div>
-      <ul class="list">
+      <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          High Priority
+        </div>
+        <div class="card-body">
+          <ul class="high card-text">
+          </ul>
+        </div>
+      </div>
+      <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          Medium Priority
+        </div>
+        <div class="card-body">
+          <ul class="med card-text">
+          </ul>
+        </div>
+      </div>
+      <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          Low Priority
+        </div>
+        <div class="card-body">
+          <ul class="low card-text">
+          </ul>
+        </div>
+      </div>
+
+<!--
+
+
+      <ul class="med">
+        <h3>MEDIUM PRIORITY</h3>
       </ul>
+      <ul class="low">
+        <h3>LOW PRIORITY</h3>
+      </ul> -->
     </div>
   </div>
   </body>

@@ -1,3 +1,47 @@
+.container {
+  text-align: center;
+  width: 50%;
+}
+
+input#task {
+  width: 50%;
+  margin: auto;
+}
+
 .strikethrough {
   text-decoration: line-through;
+  text-decoration-color: black;
 }
+
+.card {
+  margin: auto;
+  min-height: 200px;
+}
+
+button {
+  margin-bottom: 2em;
+}
+
+li {
+  text-align: left;
+}
+/* .high {
+  background: rgba(150, 0, 0, 0.8);
+  min-height: 200px;
+}
+.med {
+  background: rgba(180, 150, 0, 0.5);
+  min-height: 200px;
+}
+.low {
+  background: rgba(0, 100, 0, 0.5);
+  min-height: 200px;
+}
+ul {
+  padding: 10px;
+  margin: 20px;
+  margin-top: 40px;
+}
+ul h3 {
+  text-align: center;
+} */

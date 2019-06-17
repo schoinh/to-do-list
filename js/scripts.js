@@ -4,14 +4,15 @@ function ToDoList() {
 }
 ToDoList.prototype.assignId = function() {
   this.currentId += 1;
-  return this.currentId;
+  return this.currentId
 }
 ToDoList.prototype.addTask = function(task) {
   task.id = this.assignId();
-  this.tasks.push(task);
+  this.tasks.push(task)
 }
-function Task (taskName) {
-  this.taskName = taskName;
+function Task (taskName, priority) {
+  this.taskName = taskName,
+  this.priority = priority
 }
 var toDoList = new ToDoList();
 
@@ -20,10 +21,15 @@ $(function(){
   $("form").submit(function(event){
     event.preventDefault();
 
-    var newTask = new Task ($("input#task").val());
+    var newTask = new Task ($("input#task").val(), $("input:radio[name=priority]:checked").val());
     toDoList.addTask(newTask);
-
-    $(".list").append("<li>"+newTask.taskName+"</li>");
+    if (newTask.priority == "high") {
+      $(".high").append("<li>"+newTask.taskName+"</li>");
+    } else if (newTask.priority == "medium") {
+      $(".med").append("<li>"+newTask.taskName+"</li>");
+    } else {
+      $(".low").append("<li>"+newTask.taskName+"</li>");
+    }
 
     $("li").click(function() {
       $(this).addClass("strikethrough")
